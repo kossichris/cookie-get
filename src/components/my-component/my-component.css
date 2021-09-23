@@ -1,0 +1,33 @@
+:host {
+  display: block;
+  
+}
+
+.overlay{
+  display: block;
+background: rgba(0, 0, 0, 0.36);
+position: fixed;
+z-index: 1000;
+width: 100%;
+left: 0;
+right: 0;
+top: 0;
+bottom: 0;
+}
+
+.modal{
+  background: white;
+  width: 60%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+  padding: 39px;
+}
+
+.modal-header{
+  display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
