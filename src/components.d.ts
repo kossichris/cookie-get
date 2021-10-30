@@ -7,9 +7,9 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface CookieGetter {
-        "boutonTitle": string;
-        "informationText": string;
-        "logoTitle": string;
+        "boutontitle": string;
+        "informationtext": string;
+        "logotitle": string;
         "modalcontent": string;
         "src": string;
     }
@@ -38,9 +38,9 @@ declare global {
 }
 declare namespace LocalJSX {
     interface CookieGetter {
-        "boutonTitle"?: string;
-        "informationText"?: string;
-        "logoTitle"?: string;
+        "boutontitle"?: string;
+        "informationtext"?: string;
+        "logotitle"?: string;
         "modalcontent"?: string;
         "src"?: string;
     }

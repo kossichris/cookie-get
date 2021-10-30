@@ -4,23 +4,23 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-.container{
+.container {
   display: flex;
   justify-content: center;
   flex-direction: row;
   margin: 16%;
 }
 input[type="checkbox"] {
-display:none;
+  display: none;
 }
 input[type="checkbox"]:checked ~ .modal,
 input[type="checkbox"]:checked ~ .modal-background {
-display: block;
+  display: block;
 }
 .modal-background {
-width: 100%;
+  width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   left: 0;
@@ -28,35 +28,33 @@ width: 100%;
   z-index: 9998;
 }
 .modal {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
-  display: none;	
+  display: none;
   width: 300px;
   height: 300px;
   background-color: #fff;
   box-sizing: border-box;
   z-index: 9999;
- 
   height: auto;
-  width: 62%;
-  margin-top: 11px;
+  width: 100%;
 }
 .modal > p {
-padding: 15px;
+  padding: 15px;
   margin: 0;
 }
 .modal-header {
-background-color: #f9f9f9;
+  background-color: #f9f9f9;
   border-bottom: 1px solid #dddddd;
   box-sizing: border-box;
   height: 50px;
 }
 .modal-header h3 {
-margin: 0;
+  margin: 0;
   box-sizing: border-box;
   padding-left: 15px;
   line-height: 50px;
@@ -65,7 +63,7 @@ margin: 0;
   display: inline-block;
 }
 .modal-header label {
-box-sizing: border-box;
+  box-sizing: border-box;
   border-left: 1px solid #dddddd;
   float: right;
   line-height: 50px;
@@ -73,21 +71,21 @@ box-sizing: border-box;
   cursor: pointer;
 }
 .modal-header label:hover img {
-opacity: 0.6;
+  opacity: 0.6;
 }
 /* below is optional, it is just an example for the blue button */
 .example-label {
-box-sizing: border-box;
+  box-sizing: border-box;
   display: inline-block;
   padding: 10px;
-  background-color: #2196f3;
+  background-color: #8f8e8e;
   color: #f9f9f9;
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
 }
 .example-label:hover {
-background-color: #2196f3;
+  background-color: #8f8e8e;
 }
 
 /*
@@ -106,10 +104,10 @@ Accordion css styles
   border-radius: 5px;
 }
 summary {
-  background-color: #2196f3;
-  color: #fff;
+  color: rgb(0, 0, 0);
   padding: 16px;
   border-radius: 5px;
+  border: 3px solid #c5c5c5;
   cursor: pointer;
   position: relative;
   font-size: 20px;
@@ -117,8 +115,11 @@ summary {
   margin: 2px 0px;
 }
 
-.required{    float: right;
-  color: #f7f6f6;}
+.required {
+  float: right;
+  color: #837e7e;
+}
+
 details > summary::-webkit-details-marker {
   display: none;
 }
@@ -128,23 +129,23 @@ details[open] summary ~ * {
 }
 @keyframes smooth {
   0% {
-      opacity: 0;
-      margin-top: -10px;
+    opacity: 0;
+    margin-top: -10px;
   }
   100% {
-      opacity: 1;
-      margin-top: 0px;
+    opacity: 1;
+    margin-top: 0px;
   }
 }
 
-details{
- /* border: 4px solid;*/
-    padding: 9px;
-    color: black;
-    border-radius: 4px;
-   /* border-color: #c5d5d4;*/
+details {
+  /* border: 4px solid;*/
+  padding: 9px;
+  color: black;
+  border-radius: 4px;
+  /* border-color: #c5d5d4;*/
 }
-.outer{
+.outer {
   padding: 35px;
 }
 
@@ -175,8 +176,8 @@ checkbox css
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -187,8 +188,8 @@ checkbox css
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
@@ -213,13 +214,44 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-.bottom-buttons{
+.bottom-buttons {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 12px;
 }
 
-.accept{
+.accept {
   margin-left: 12px;
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 650px) {
+  .bottom-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 22px;
+    margin-left: -22px;
+  }
+
+  .example-label {
+    margin-top: 6px;
+    margin-left: 12px;
+    width: 100%;
+  }
+
+  summary {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 700px) {
+  summary {
+    display: flex;
+    flex-direction: column;
+  }
 }
