@@ -1,18 +1,12 @@
-import { newSpecPage } from '@stencil/core/testing';
 import { CookieGetter } from '../cookie-getter';
 
-describe('cookie-getter', () => {
-  it('renders', async () => {
-    const page = await newSpecPage({
-      components: [CookieGetter],
-      html: `<cookie-getter></cookie-getter>`,
-    });
-    expect(page.root).toEqualHtml(`
-      <cookie-getter>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
-      </cookie-getter>
-    `);
-  });
+
+it('should parseOptions the checked property', () => {
+  const cookie = new CookieGetter();
+    const testObj =[ {title: "Conservation des données techniques", 
+description: "Lorem Ipsum is simply dummy text of the printing a…pe and scrambled it to make a type specimen book.",
+ isActivated: true}]
+  expect(cookie.parseOptions(testObj)).toEqualAttributes([{title: "Conservation des données techniques",
+ description: "Lorem Ipsum is simply dummy text of the printing a…pe and scrambled it to make a type specimen book.",
+ isActivated: true}])
 });

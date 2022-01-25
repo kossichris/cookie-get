@@ -9,8 +9,10 @@ export namespace Components {
     interface CookieGetter {
         "boutontitle": string;
         "informationtext": string;
+        "logo": string;
         "logotitle": string;
         "modalcontent": string;
+        "panels": string;
         "src": string;
     }
     interface MyComponent {
@@ -40,8 +42,10 @@ declare namespace LocalJSX {
     interface CookieGetter {
         "boutontitle"?: string;
         "informationtext"?: string;
+        "logo"?: string;
         "logotitle"?: string;
         "modalcontent"?: string;
+        "panels"?: string;
         "src"?: string;
     }
     interface MyComponent {
