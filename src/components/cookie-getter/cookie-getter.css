@@ -124,6 +124,7 @@ summary {
 .required {
   float: right;
   color: #837e7e;
+  margin-left: 2em;
 }
 
 details > summary::-webkit-details-marker {
@@ -255,10 +256,56 @@ input:checked + .slider:before {
   }
 }
 
-/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 457px) {
+  summary {
+    height: 192px !important;
+  }
+  .required-wrapper{
+    flex-direction: column !important;
+  }
+  .required{
+    margin-top: 10px;
+  }
+}
+
 @media screen and (max-width: 700px) {
+  .required-wrapper {
+   flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 975px) {
   summary {
     display: flex;
     flex-direction: column;
+    height: 100px;
   }
+  .required-wrapper {
+    justify-content: center !important;
+    width: 84% !important;
+    margin-top: 23px !important;
+  }
+
+  .panel-title{
+    text-align: center;
+  }
+}
+
+
+.required-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 19%;
+  float: right;
+  align-items: center;
+  margin-top: -3px;
+}
+
+.footer{
+  background: gainsboro;
+  padding: 23px;
+  text-align: center;
+  font-weight: 700;
+
 }
