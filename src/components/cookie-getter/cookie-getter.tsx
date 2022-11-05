@@ -43,7 +43,7 @@ export class CookieGetter {
         this.internalPanels = cookieInfo.panels;
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
       const data = {
         boutontitle: 'OUVRIR',
         logotitle: 'JETECH',
@@ -80,10 +80,10 @@ export class CookieGetter {
           },
         ],
       };
-        this.logotitle = data.logotitle;
-        this.boutontitle = data.boutontitle;
-        this.informationtext = data.informationtext;
-        this.internalPanels = data.panels;
+      this.logotitle = data.logotitle;
+      this.boutontitle = data.boutontitle;
+      this.informationtext = data.informationtext;
+      this.internalPanels = data.panels;
     }
   }
 
