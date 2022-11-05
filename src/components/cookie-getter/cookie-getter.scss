@@ -5,23 +5,23 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 .container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: 16%;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 16%;
+  align-items: center;
 }
-input[type="checkbox"] {
+input[type='checkbox'] {
   display: none;
-opacity: 0
+  opacity: 0;
 }
-input[type="checkbox"]:checked ~ .modal,
-input[type="checkbox"]:checked ~ .modal-background {
+input[type='checkbox']:checked ~ .modal,
+input[type='checkbox']:checked ~ .modal-background {
   display: block;
-opacity: 1
+  opacity: 1;
 }
-.error{
-color:red
+.error {
+  color: red;
 }
 .modal-background {
   width: 100%;
@@ -127,8 +127,27 @@ summary {
   margin-left: 2em;
 }
 
-details > summary::-webkit-details-marker {
-  display: none;
+details > summary:before {
+  content: '+';
+  font-weight: 800;
+  font-size: 2rem;
+  position: relative;
+  margin-right: 12px;
+}
+
+details[open] > summary:before {
+  content: '-';
+  font-weight: 800;
+  font-size: 2rem;
+  position: relative;
+  margin-right: 12px;
+}
+
+summary::marker {
+  display: none !important;
+}
+summary {
+  list-style: none;
 }
 
 details[open] summary ~ * {
@@ -189,7 +208,7 @@ checkbox css
 
 .slider:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 26px;
   width: 26px;
   left: 4px;
@@ -200,11 +219,11 @@ checkbox css
 }
 
 input:checked + .slider {
-  background-color: #0f71bf;
+  background-color: #585757;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #0f71bf;
+  box-shadow: 0 0 1px #585757;
 }
 
 input:checked + .slider:before {
@@ -221,6 +240,7 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
 .bottom-buttons {
   display: flex;
   flex-direction: row;
@@ -232,8 +252,45 @@ input:checked + .slider:before {
   margin-left: 12px;
 }
 
-/* On screens that are 600px or less, set the background color to olive */
-@media screen and (max-width: 650px) {
+summary .panel-title {
+  width: auto;
+}
+.required-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: auto;
+  float: right;
+  align-items: flex-end;
+  margin-top: -3px;
+}
+
+.footer {
+  background: gainsboro;
+  padding: 23px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* On screens that are 460px or less, set the background color to olive */
+@media screen and (max-width: 460px) {
+  .modal {
+    max-width: auto;
+    width: auto;
+  }
+  details {
+    max-width: auto;
+    width: auto;
+  }
+  .required-wrapper {
+    flex-direction: column !important;
+    justify-content: space-between !important ;
+  }
+}
+
+/* On screens that are 700px or less, set the background color to olive */
+@media screen and (max-width: 700px) {
   .bottom-buttons {
     display: flex;
     flex-direction: column;
@@ -247,65 +304,25 @@ input:checked + .slider:before {
     margin-top: 6px;
     margin-left: 12px;
     width: 100%;
-    text-align:center
-  }
-
-  summary {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 457px) {
-  summary {
-    height: 192px !important;
-  }
-  .required-wrapper{
-    flex-direction: column !important;
-  }
-  .required{
-    margin-top: 10px;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .required-wrapper {
-   flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 975px) {
-  summary {
-    display: flex;
-    flex-direction: column;
-    height: 100px;
-  }
-  .required-wrapper {
-    justify-content: center !important;
-    width: 84% !important;
-    margin-top: 23px !important;
-  }
-
-  .panel-title{
     text-align: center;
   }
+
+  summary {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .required-wrapper {
+    width: -webkit-fill-available !important;
+  }
+  .outer {
+    padding: 0;
+  }
 }
 
-
-.required-wrapper{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  width: 19%;
-  float: right;
-  align-items: center;
-  margin-top: -3px;
-}
-
-.footer{
-  background: gainsboro;
-  padding: 23px;
-  text-align: center;
-  font-weight: 700;
-
+/* On screens that are 975px or less, set the background color to olive */
+@media screen and (max-width: 975px) {
+  .container {
+    margin: 1%;
+  }
 }
