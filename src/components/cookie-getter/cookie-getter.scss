@@ -125,6 +125,7 @@ summary {
   float: right;
   color: #837e7e;
   margin-left: 2em;
+  display: flex !important;
 }
 
 details > summary:before {
@@ -132,7 +133,7 @@ details > summary:before {
   font-weight: 800;
   font-size: 2rem;
   position: relative;
-  margin-right: 12px;
+  margin-right: 3px;
 }
 
 details[open] > summary:before {
@@ -140,7 +141,7 @@ details[open] > summary:before {
   font-weight: 800;
   font-size: 2rem;
   position: relative;
-  margin-right: 12px;
+  margin-right: 3px;
 }
 
 summary::marker {
@@ -317,6 +318,13 @@ summary .panel-title {
   }
   .outer {
     padding: 0;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  summary .panel-title {
+    top: -3px;
+    position: relative;
   }
 }
 
